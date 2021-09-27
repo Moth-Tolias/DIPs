@@ -10,7 +10,7 @@
 
 ## Abstract
 
-depercating ```d @property``` and introducing ```d @get @set``` so that properties can be useful again.
+depercating ``` @property``` and introducing ``` @get @set``` so that properties can be useful again.
 
 
 ## Contents
@@ -24,12 +24,12 @@ depercating ```d @property``` and introducing ```d @get @set``` so that properti
 
 ## Rationale
 
-```d @Property``` suffers from the following issues:
+``` @Property``` suffers from the following issues:
 * It doesn't support binary/unary operators
 * Requires two parentheses to call a delegate function
 * Next to useless due to the capabilities of the CTFE(Compile time function engine)
 * Verbage that is unneeded when defining the set and get functions.
-* Current definition of ```d @Property``` is consider to be uncertain by the spec
+* Current definition of ``` @Property``` is consider to be uncertain by the spec
 
 
 ## Prior Work
