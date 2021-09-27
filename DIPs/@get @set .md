@@ -39,18 +39,18 @@ https://en.wikipedia.org/wiki/Mutator_method
 
 ## Description
 
-This DIP proposes that the attribute ```d @Property``` to be depercated and replaced by ```d @get @set``` as accessors (Or mutator methods).
+This DIP proposes that the attribute ``` @Property``` to be depercated and replaced by ``` @get @set``` as accessors (Or mutator methods).
 Accessors are functions that handle values that are either being returned or being modified by a new value that is being passed to the function.
-Accessors for ```d @get ``` can only return rvalues as the returning/modfiying the values are being handle by the functions, thus cannot be passed by reference to other functions.
+Accessors for ``` @get ``` can only return rvalues as the returning/modfiying the values are being handle by the functions, thus cannot be passed by reference to other functions.
 Cannot obtain the reference of the Accessor functions directly without using the ```__traits(@set, exp)``` or ```__traits(@get, exp)``` functions.
-Accessors for ```d @set``` can only have zero Parameter and must return a non-void type
-Accessors for ```d @set``` can only have one non-default parameter and must return a void type
+Accessors for ``` @set``` can only have zero Parameter and must return a non-void type
+Accessors for ``` @set``` can only have one non-default parameter and must return a void type
 Accessors can not be overloaded by non-Accessors that share the same name
 Accessors can not have variadic parameters.
 Calling Accessors functions can only have parentheses when calling a delegate function
-The return type of the ```d @get ``` accessor must be the same exact type as the paramater of the ```d @set``` accessor if they share the same exact name
-Accessors can be marked as ```d @nogc``` ```d pure``` ```d nothrow``` ```d safe``` ```d throw```
-```d @get @set``` can be used to extend the C/C++ structs/classes methods to behave as Accessors
+The return type of the ``` @get ``` accessor must be the same exact type as the paramater of the ``` @set``` accessor if they share the same exact name
+Accessors can be marked as ``` @nogc``` ``` pure``` ``` nothrow``` ``` safe``` ``` throw```
+``` @get @set``` can be used to extend the C/C++ structs/classes methods to behave as Accessors
 
 ```d 
 
@@ -64,7 +64,7 @@ Accessors can be marked as ```d @nogc``` ```d pure``` ```d nothrow``` ```d safe`
 	extern (C++) @get int foo();
 	extern (C++) @get("Number") int getNumber()
 	extern (C++) @set("Number") void setNumber(int value)
-	```
+```
 
 
 ## Breaking Changes and Deprecations
