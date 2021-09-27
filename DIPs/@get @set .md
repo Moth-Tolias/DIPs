@@ -68,7 +68,7 @@ Accessors can be marked as ``` @nogc``` ``` pure``` ``` nothrow``` ``` safe``` `
 
 
 ## Breaking Changes and Deprecations
-Functions that are marked with ```d @Property``` are to be depercated as currently it serves no use,
+Functions that are marked with ``` @Property``` are to be depercated as currently it serves no use,
 
 
 ## Reference
