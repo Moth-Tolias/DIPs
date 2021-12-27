@@ -50,7 +50,6 @@ depercating ``` @property``` and introduce ``` @get @set```.
 * Calling Accessors functions can only have parentheses when calling a delegate function
 * The return type of the ``` @get ``` accessor must be the same exact type as the paramater of the ``` @set``` accessor if they share the same exact name
 * Accessors can be marked as ``` @nogc``` ``` pure``` ``` nothrow``` ``` safe``` ``` throw```
-``` @get @set``` can be used to extend the C/C++ structs/classes methods to behave as Accessors
 
 ```d 
 
