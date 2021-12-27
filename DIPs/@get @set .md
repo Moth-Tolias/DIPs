@@ -10,7 +10,7 @@
 
 ## Abstract
 
-depercating ``` @property``` and introducing ``` @get @set``` so that properties can be useful again.
+depercating ``` @property``` and introduce ``` @get @set```.
 
 
 ## Contents
@@ -33,23 +33,23 @@ depercating ``` @property``` and introducing ``` @get @set``` so that properties
 
 
 ## Prior Work
-https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/properties
-https://docs.python.org/3/howto/descriptor.html#properties
-https://en.wikipedia.org/wiki/Mutator_method
-
+* https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/properties
+* https://docs.python.org/3/howto/descriptor.html#properties
+* https://en.wikipedia.org/wiki/Mutator_method
+* https://gist.github.com/jharmer95/d6337ccd58f3b7470b65e858d509022a
 ## Description
 
-This DIP proposes that the attribute ``` @Property``` to be depercated and replaced by ``` @get @set``` as accessors (Or mutator methods).
-Accessors are functions that handle values that are either being returned or being modified by a new value that is being passed to the function.
-Accessors for ``` @get ``` can only return rvalues as the returning/modfiying the values are being handle by the functions, thus cannot be passed by reference to other functions.
-Cannot obtain the reference of the Accessor functions directly without using the ```__traits(@set, exp)``` or ```__traits(@get, exp)``` functions.
-Accessors for ``` @set``` can only have zero Parameter and must return a non-void type
-Accessors for ``` @set``` can only have one non-default parameter and must return a void type
-Accessors can not be overloaded by non-Accessors that share the same name
-Accessors can not have variadic parameters.
-Calling Accessors functions can only have parentheses when calling a delegate function
-The return type of the ``` @get ``` accessor must be the same exact type as the paramater of the ``` @set``` accessor if they share the same exact name
-Accessors can be marked as ``` @nogc``` ``` pure``` ``` nothrow``` ``` safe``` ``` throw```
+* This DIP proposes that the attribute ``` @Property``` to be depercated and replaced by ``` @get @set``` as accessors (Or mutator methods).
+* Accessors are functions that handle values that are either being returned or being modified by a new value that is being passed to the function.
+* Accessors for ``` @get ``` can only return rvalues as the returning/modfiying the values are being handle by the functions, thus cannot be passed by reference to other functions.
+* Cannot obtain the reference of the Accessor functions directly without using the ```__traits(@set, exp)``` or ```__traits(@get, exp)``` functions.
+* Accessors for ``` @set``` can only have zero Parameter and must return a non-void type
+* Accessors for ``` @set``` can only have one non-default parameter and must return a void type
+* Accessors can not be overloaded by non-Accessors that share the same name
+* Accessors can not have variadic parameters.
+* Calling Accessors functions can only have parentheses when calling a delegate function
+* The return type of the ``` @get ``` accessor must be the same exact type as the paramater of the ``` @set``` accessor if they share the same exact name
+* Accessors can be marked as ``` @nogc``` ``` pure``` ``` nothrow``` ``` safe``` ``` throw```
 ``` @get @set``` can be used to extend the C/C++ structs/classes methods to behave as Accessors
 
 ```d 
